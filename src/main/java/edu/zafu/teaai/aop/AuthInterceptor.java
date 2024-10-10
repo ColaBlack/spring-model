@@ -3,8 +3,8 @@ package edu.zafu.teaai.aop;
 import edu.zafu.teaai.annotation.AuthCheck;
 import edu.zafu.teaai.common.ErrorCode;
 import edu.zafu.teaai.common.exception.BusinessException;
-import edu.zafu.teaai.model.po.User;
 import edu.zafu.teaai.model.enums.UserRoleEnum;
+import edu.zafu.teaai.model.po.User;
 import edu.zafu.teaai.service.UserService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -31,7 +31,6 @@ public class AuthInterceptor {
 
     /**
      * 执行拦截
-     *
      */
     @Around("@annotation(authCheck)")
     public Object doInterceptor(ProceedingJoinPoint joinPoint, AuthCheck authCheck) throws Throwable {

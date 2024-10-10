@@ -14,20 +14,20 @@ import java.util.Map;
 
 /**
  * 代码生成器
+ *
  * @author ColaBlack
  */
 public class CodeGenerator {
 
     /**
      * 用法：修改生成参数和生成路径，注释掉不需要的生成逻辑，然后运行即可
-     *
      */
     public static void main(String[] args) throws TemplateException, IOException {
         // 指定生成参数
         String packageName = "edu.zafu.teaai";
-        String dataName = "用户评论";
-        String dataKey = "userComment";
-        String upperDataKey = "UserComment";
+        String dataName = "用户答案";
+        String dataKey = "useranswer";
+        String upperDataKey = "UserAnswer";
 
         // 封装生成参数
         Map<String, Object> dataModel = new HashMap<>();
