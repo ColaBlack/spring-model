@@ -71,3 +71,10 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - edu.zafu.teaai.controller
+# 图床配置
+# todo 需替换配置
+image:
+  bed:
+    url: host
+    uploadUrl: host/upload
+    authCode: authCode
