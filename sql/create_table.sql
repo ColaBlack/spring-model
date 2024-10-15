@@ -4,7 +4,7 @@ use teaai;
 
 -- 用户表
 -- auto-generated definition
-create table user
+create table if not exists user
 (
     id           bigint auto_increment comment 'id'
         primary key,
@@ -24,4 +24,3 @@ create table user
 
 create index idx_unionId
     on user (unionId);
-
