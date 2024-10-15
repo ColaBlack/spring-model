@@ -6,7 +6,7 @@ use teaai;
 -- auto-generated definition
 create table user
 (
-    user_id       bigint auto_increment comment 'id'
+    id       bigint auto_increment comment 'id'
         primary key,
     user_account  varchar(256)                           not null comment '账号',
     user_password varchar(512)                           not null comment '密码',
