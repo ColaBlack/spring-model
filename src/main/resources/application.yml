@@ -30,7 +30,7 @@ spring:
   data:
     #redis配置
     redis:
-      database: 1
+      database: 0
       host: localhost
       port: 6379
       timeout: 5000
