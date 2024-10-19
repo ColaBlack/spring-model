@@ -34,6 +34,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation ("com.baomidou:mybatis-plus-spring-boot3-starter:3.5.7")
 }
 
 tasks.withType<Test> {
