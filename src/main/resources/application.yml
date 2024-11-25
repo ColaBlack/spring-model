@@ -1,5 +1,4 @@
 # 公共配置文件
-
 spring:
   application:
     name: teaai
@@ -12,21 +11,20 @@ spring:
       matching-strategy: ant_path_matcher
   # session 配置
   session:
-
     store-type: redis
     # 30 天过期
     timeout: 2592000
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/teaai
-    username: root
-    password: 123456
+    url: jdbc:mysql://${teaai.mysql.host}:${teaai.mysql.port}/${teaai.mysql.database}
+    username: ${teaai.mysql.username}
+    password: ${teaai.mysql.password}
   # Redis 配置
   redis:
-    database: 1
-    host: localhost
-    port: 6379
+    database: ${teaai.redis.database}
+    host: ${teaai.redis.host}
+    port: ${teaai.redis.port}
     timeout: 5000
   # 文件上传
   servlet:
@@ -35,7 +33,7 @@ spring:
       max-file-size: 10MB
 server:
   address: 0.0.0.0
-  port: 1221
+  port: ${teaai.server.port}
   servlet:
     context-path: /api
     # cookie 30 天过期
@@ -48,18 +46,9 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
-      logic-delete-field: is_delete # 全局逻辑删除的实体字段名
+      logic-delete-field: has_deleted # 全局逻辑删除的实体字段名
       logic-delete-value: 1 # 逻辑已删除值（默认为 1）
       logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
-
-# 对象存储
-# todo 需替换配置
-cos:
-  client:
-    accessKey: xxx
-    secretKey: xxx
-    region: xxx
-    bucket: xxx
 # 接口文档配置
 knife4j:
   enable: true
@@ -72,9 +61,13 @@ knife4j:
         api-rule-resources:
           - edu.zafu.teaai.controller
 # 图床配置
-# todo 需替换配置
 image:
   bed:
-    url: host
-    uploadUrl: host/upload
-    authCode: authCode
+    url: ${teaai.image.bed.url}
+    uploadUrl: ${teaai.image.bed.uploadUrl}
+    authCode: ${teaai.image.bed.authCode}
+#智谱ai配置
+#ai:
+#  api-key: ${teaai.ai.api-key}
+#  model-name: ${teaai.ai.model-name}
+#  request-id-template: ${teaai.ai.request-id-template}

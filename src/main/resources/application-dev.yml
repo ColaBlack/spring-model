@@ -1,0 +1,21 @@
+teaai:
+  mysql:
+    host: localhost
+    port: 3306
+    database: smart_canvas
+    username: root
+    password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    database: 2
+  server:
+    port: 1221
+  image:
+    bed:
+      url: host
+      uploadUrl: host/upload
+      authCode: code
+#    api-key: key
+#    model-name: glm-4-flash
+#    request-id-template: "smartCanvas-request-%s"

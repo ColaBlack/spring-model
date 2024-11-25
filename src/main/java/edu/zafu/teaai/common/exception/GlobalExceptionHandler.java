@@ -1,6 +1,5 @@
 package edu.zafu.teaai.common.exception;
 
-
 import edu.zafu.teaai.common.BaseResponse;
 import edu.zafu.teaai.common.ErrorCode;
 import edu.zafu.teaai.common.ResultUtils;

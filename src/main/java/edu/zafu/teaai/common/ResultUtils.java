@@ -25,7 +25,7 @@ public class ResultUtils {
      * @param errorCode 错误码
      * @return 失败返回的结果
      */
-    public static BaseResponse error(ErrorCode errorCode) {
+    public static BaseResponse<?> error(ErrorCode errorCode) {
         return new BaseResponse<>(errorCode);
     }
 
@@ -36,8 +36,8 @@ public class ResultUtils {
      * @param message 错误信息
      * @return 失败返回的结果
      */
-    public static BaseResponse error(int code, String message) {
-        return new BaseResponse(code, null, message);
+    public static BaseResponse<?> error(int code, String message) {
+        return new BaseResponse<>(code, null, message);
     }
 
     /**
@@ -47,7 +47,7 @@ public class ResultUtils {
      * @param message   错误信息
      * @return 失败返回的结果
      */
-    public static BaseResponse error(ErrorCode errorCode, String message) {
-        return new BaseResponse(errorCode.getCode(), null, message);
+    public static BaseResponse<?> error(ErrorCode errorCode, String message) {
+        return new BaseResponse<>(errorCode.getCode(), null, message);
     }
 }
